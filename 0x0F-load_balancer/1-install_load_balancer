@@ -4,7 +4,7 @@ apt update
 apt install -y haproxy
 cp -a /etc/haproxy/haproxy.cfg{,.orig}
 configf=$'\nfrontend web-frontend\n\tbind localhost:80\n\tmode http\n\tdefault_backend web-backend'
-configb=$'\nbackend web-backend\n\tbalance roundrobin\n\tserver web-01 \t100.26.135.224:80 check\n\tserver web-02 \t3.235.226.56:80 check'
+configb=$'\nbackend web-backend\n\tbalance roundrobin\n\tserver web-01 \t100.25.203.147	check\n\tserver web-02 \t100.25.104.117 check'
 echo "$configf" >> /etc/haproxy/haproxy.cfg
 echo "$configb" >> /etc/haproxy/haproxy.cfg
 service haproxy restart
